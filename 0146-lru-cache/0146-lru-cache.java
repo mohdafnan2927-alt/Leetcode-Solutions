@@ -21,10 +21,8 @@ class LRUCache {
         if(map.containsKey(key)){
             map.remove(key);
         }else if(map.size()>=c){
-            for(Integer Key : map.keySet()){
-                map.remove(Key);
-                break;
-            }
+            int oldestKey = map.keySet().iterator().next();
+            map.remove(oldestKey);
         }
         map.put(key,value);
         
