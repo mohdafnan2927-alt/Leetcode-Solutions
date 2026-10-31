@@ -24,15 +24,15 @@ class Solution {
         for (Character Key : map.keySet()) {
             pq.add(new pair(map.get(Key), Key));
         }
-        String ans = "";
+        StringBuilder ans = new StringBuilder("");
         while (!pq.isEmpty()) {
             pair p = pq.poll();
 
             for (int i = 0; i < p.val; i++) {
-                ans += p.key;
+                ans.append( p.key);
             }
         }
-        return ans;
+        return ans.toString();
     }
 }
 
